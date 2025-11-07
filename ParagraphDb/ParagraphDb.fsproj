@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Configurations>Debug;Release;Relase</Configurations>
+        <Platforms>AnyCPU;win-x64; x64</Platforms>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>Konsth68@gmail.com</Authors>
+        <Description>Get data from franDict.db</Description>
+        <Version>1.0.24</Version>
+        <AssemblyVersion>1.0.24</AssemblyVersion>
+        <FileVersion>1.0.24</FileVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Logger.fs" />
+        <Compile Include="DapperDb.fs" />
+        <Compile Include="DbModel.fs" />
+        <Compile Include="Model.fs" />
+        <Compile Include="TrieWord.fs" />
+        <Compile Include="ParagraphDbService.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.1.66" />
+      <PackageReference Include="KTrie" Version="3.0.1" />
+      <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.9" />
+      <PackageReference Include="Serilog" Version="4.3.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+      <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>
